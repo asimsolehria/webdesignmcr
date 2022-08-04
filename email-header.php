@@ -19,6 +19,11 @@
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
+// Call the global $email object
+global $email;
+// use if needed
+
+
 
 ?>
 <!DOCTYPE html>
@@ -163,6 +168,7 @@ if (!defined('ABSPATH')) {
 																		is
 																		being
 																		processed
+																		<?php echo $email->id; ?>
 																	</td>
 																</tr>
 																<tr>

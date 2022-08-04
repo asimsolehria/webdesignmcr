@@ -18,7 +18,19 @@
 
 defined('ABSPATH') || exit;
 
-$text_align = is_rtl() ? 'right' : 'left';
+// Email specific strings
+
+
+$email_subheadings = array(
+	"new_order" => "You’ve received the following order from {$order->get_billing_first_name()} {$order->get_billing_last_name()}  :",
+	"cancelled_order" => "Notification to let you know — order #121 belonging to Asim Solehria has been cancelled:",
+	"failed_order" => "Payment for order #{$order->get_order_number()} from {$order->get_billing_first_name()} {$order->get_billing_last_name()} has failed. The order was as follows:",
+	"customer_on_hold_order" => "Thanks for your order. It’s on-hold until we confirm that payment has been received. In the meantime, here’s a reminder of what you ordered:",
+	"customer_processing_order" => "Just to let you know — we've received your order #{$order->get_order_number()}, and it is now being processed:",
+	"customer_completed_order" => "We have finished processing your order.",
+	"customer_refunded_order" => "Your order on My WordPress has been refunded. There are more details below for your reference:",
+	"customer_invoice" => "An order has been created for you on My WordPress. Your invoice is below, with a link to make payment when you’re ready: <a href='{$order->get_checkout_payment_url()}'>Pay for this order</a>",
+)
 ?>
 <tr>
 	<td>
@@ -35,7 +47,7 @@ $text_align = is_rtl() ? 'right' : 'left';
 		$order_url = $order->get_view_order_url();
 	}
 	/* translators: %s: Order ID. */
-	echo wp_kses_post($before . sprintf(__('[Order #%s]', 'woocommerce') . $after . ' (<time datetime="%s">%s</time>)', $order->get_order_number(), $order->get_date_created()->format('c'), wc_format_datetime($order->get_date_created())));
+	// echo wp_kses_post($before . sprintf(__('[Order #%s]', 'woocommerce') . $after . ' (<time datetime="%s">%s</time>)', $order->get_order_number(), $order->get_date_created()->format('c'), wc_format_datetime($order->get_date_created())));
 	?>
 </h2>
 
@@ -80,11 +92,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                                                                 font-size: 14px;
                                                                 padding-bottom: 30px;
                                                             ">
-						Just to let you know
-						--we've received
-						your order #<?php echo $order->get_order_number(); ?>,
-						and it is now being
-						processed:
+						<?php echo $email_subheadings[$email->id]; ?>
 					</td>
 				</tr>
 				<tr class="line-item">
