@@ -168,7 +168,6 @@ global $email;
 																		is
 																		being
 																		processed
-																		<?php echo $email->id; ?>
 																	</td>
 																</tr>
 																<tr>
