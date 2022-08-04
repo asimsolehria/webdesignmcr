@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Email Addresses
  *
@@ -15,40 +16,197 @@
  * @version 5.6.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
-$text_align = is_rtl() ? 'right' : 'left';
+// $text_align = is_rtl() ? 'right' : 'left';
 $address    = $order->get_formatted_billing_address();
 $shipping   = $order->get_formatted_shipping_address();
 
-?><table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top; margin-bottom: 40px; padding:0;" border="0">
-	<tr>
-		<td style="text-align:<?php echo esc_attr( $text_align ); ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0; padding:0;" valign="top" width="50%">
-			<h2><?php esc_html_e( 'Billing address', 'woocommerce' ); ?></h2>
+?>
 
-			<address class="address">
-				<?php echo wp_kses_post( $address ? $address : esc_html__( 'N/A', 'woocommerce' ) ); ?>
-				<?php if ( $order->get_billing_phone() ) : ?>
-					<br/><?php echo wc_make_phone_clickable( $order->get_billing_phone() ); ?>
-				<?php endif; ?>
-				<?php if ( $order->get_billing_email() ) : ?>
-					<br/><?php echo esc_html( $order->get_billing_email() ); ?>
-				<?php endif; ?>
-			</address>
-		</td>
-		<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && $shipping ) : ?>
-			<td style="text-align:<?php echo esc_attr( $text_align ); ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; padding:0;" valign="top" width="50%">
-				<h2><?php esc_html_e( 'Shipping address', 'woocommerce' ); ?></h2>
 
-				<address class="address">
-					<?php echo wp_kses_post( $shipping ); ?>
-					<?php if ( $order->get_shipping_phone() ) : ?>
-						<br /><?php echo wc_make_phone_clickable( $order->get_shipping_phone() ); ?>
-					<?php endif; ?>
-				</address>
-			</td>
-		<?php endif; ?>
-	</tr>
-</table>
+<tr>
+	<td class="box box-ext order-summary-box" style="
+                                                background: #757575;
+                                                padding: 0 25px;
+                                                text-align: center;
+                                            ">
+		<table class="two-col ledger" style="
+                                                    background: #000000;
+                                                    margin: 0 auto;
+                                                    font-size: 14px;
+                                                    line-height: 22px;
+                                                    width: 100%;
+                                                    text-align: left;
+                                                ">
+			<tbody>
+				<tr>
+					<td class="em-spacer-1" style="height: 26px"></td>
+				</tr>
+				<tr></tr>
+				<tr class="line-item">
+					<td colspan="3" class="line-item product-thumb-column" style="
+                                                                width: 80px;
+                                                                padding-left: 50px;
+                                                                text-align: left;
+                                                                color: #fff;
+                                                                font-size: 16px;
+                                                            ">
+						<strong>
+							Customer
+							Information</strong>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table align="left" class="column column-1" style="
+                                                                    margin: 0;
+                                                                    width: 270px;
+                                                                ">
+
+							<tbody>
+								<tr>
+									<td style="
+                                                                                padding: 10px
+                                                                                    10px
+                                                                                    10px
+                                                                                    50px;
+                                                                            ">
+										<strong class="title" style="
+                                                                                    display: block;
+                                                                                    margin-bottom: 5px;
+                                                                                ">
+											Shipping
+											Address
+										</strong>
+										<?php if (!wc_ship_to_billing_address_only() && $order->needs_shipping_address() && $shipping) : ?>
+											<address class="address">
+												<?php echo wp_kses_post($shipping); ?>
+												<?php if ($order->get_shipping_phone()) : ?>
+													<br /><?php echo wc_make_phone_clickable($order->get_shipping_phone()); ?>
+												<?php endif; ?>
+											</address>
+
+										<?php endif; ?>
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+						<table align="left" class="column column-2" style="
+                                                                    margin: 0;
+                                                                    width: 270px;
+                                                                ">
+							<tbody>
+								<tr>
+									<td style="
+                                                                                padding: 10px
+                                                                                    10px
+                                                                                    10px;
+                                                                            "></td>
+									<td style="
+                                                                                padding: 10px
+                                                                                    10px
+                                                                                    10px
+                                                                                    50px;
+                                                                            ">
+										<strong class="title" style="
+                                                                                    display: block;
+                                                                                    margin-bottom: 5px;
+                                                                                ">
+											Billing
+											Address
+										</strong>
+										<address class="address">
+											<?php echo wp_kses_post($address ? $address : esc_html__('N/A', 'woocommerce')); ?>
+											<?php if ($order->get_billing_phone()) : ?>
+												<br /><?php echo wc_make_phone_clickable($order->get_billing_phone()); ?>
+											<?php endif; ?>
+											<?php if ($order->get_billing_email()) : ?>
+												<br /><?php echo esc_html($order->get_billing_email()); ?>
+											<?php endif; ?>
+										</address>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="em-spacer-1" style="height: 26px"></td>
+				</tr>
+				<tr>
+					<td>
+						<table align="left" class="column column-1" style="
+                                                                    margin: 0;
+                                                                    width: 270px;
+                                                                ">
+							<tbody>
+								<tr>
+									<td style="
+                                                                                padding: 10px
+                                                                                    10px
+                                                                                    10px
+                                                                                    50px;
+                                                                            ">
+										<strong class="title" style="
+                                                                                    text-transform: uppercase;
+                                                                                    display: block;
+                                                                                    margin-bottom: 5px;
+                                                                                ">
+											Shipping
+											Method
+										</strong>
+										<span style="
+                                                                                    color: #fff;
+                                                                                    font-size: smaller;
+                                                                                "><?php echo $order->get_shipping_method(); ?></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table align="left" class="column column-2" style="
+                                                                    margin: 0;
+                                                                    width: 270px;
+                                                                ">
+							<tbody>
+								<tr>
+									<td style="
+                                                                                padding: 10px
+                                                                                    10px
+                                                                                    10px;
+                                                                            "></td>
+									<td style="
+                                                                                padding: 10px
+                                                                                    10px
+                                                                                    10px
+                                                                                    50px;
+                                                                            ">
+										<strong class="title" style="
+                                                                                    text-transform: uppercase;
+                                                                                    display: block;
+                                                                                    margin-bottom: 5px;
+                                                                                ">
+											Payment
+											Method
+										</strong>
+										<span style="
+                                                                                    color: #fff;
+                                                                                    font-size: smaller;
+                                                                                "><?php echo $order->get_payment_method_title(); ?></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="em-spacer-1" style="height: 26px"></td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
