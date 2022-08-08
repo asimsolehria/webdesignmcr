@@ -43,9 +43,8 @@ $shipping   = $order->get_formatted_shipping_address();
                                                 ">
 			<tbody>
 				<tr>
-					<td class="em-spacer-1" style="height: 26px"></td>
+					<td colspan="3" class="em-spacer-1" style="height: 26px"></td>
 				</tr>
-				<tr></tr>
 				<tr class="line-item">
 					<td colspan="3" class="line-item product-thumb-column" style="
                                                                 width: 80px;
@@ -82,7 +81,7 @@ $shipping   = $order->get_formatted_shipping_address();
 											Address
 										</strong>
 										<?php if (!wc_ship_to_billing_address_only() && $order->needs_shipping_address() && $shipping) : ?>
-											<address class="address">
+											<address class="address" style="font-style: normal;">
 												<?php echo wp_kses_post($shipping); ?>
 												<?php if ($order->get_shipping_phone()) : ?>
 													<br /><?php echo wc_make_phone_clickable($order->get_shipping_phone()); ?>
@@ -101,11 +100,11 @@ $shipping   = $order->get_formatted_shipping_address();
                                                                 ">
 							<tbody>
 								<tr>
-									<td style="
+									<!-- <td style="
                                                                                 padding: 10px
                                                                                     10px
                                                                                     10px;
-                                                                            "></td>
+                                                                            "></td> -->
 									<td style="
                                                                                 padding: 10px
                                                                                     10px
@@ -119,7 +118,7 @@ $shipping   = $order->get_formatted_shipping_address();
 											Billing
 											Address
 										</strong>
-										<address class="address">
+										<address class="address" style="font-style: normal;">
 											<?php echo wp_kses_post($address ? $address : esc_html__('N/A', 'woocommerce')); ?>
 											<?php if ($order->get_billing_phone()) : ?>
 												<br /><?php echo wc_make_phone_clickable($order->get_billing_phone()); ?>
@@ -152,12 +151,11 @@ $shipping   = $order->get_formatted_shipping_address();
                                                                                     50px;
                                                                             ">
 										<strong class="title" style="
-                                                                                    text-transform: uppercase;
                                                                                     display: block;
                                                                                     margin-bottom: 5px;
                                                                                 ">
 											Shipping
-											Method
+											Method <br>
 										</strong>
 										<span style="
                                                                                     color: #fff;
@@ -173,11 +171,11 @@ $shipping   = $order->get_formatted_shipping_address();
                                                                 ">
 							<tbody>
 								<tr>
-									<td style="
+									<!-- <td style="
                                                                                 padding: 10px
                                                                                     10px
                                                                                     10px;
-                                                                            "></td>
+                                                                            "></td> -->
 									<td style="
                                                                                 padding: 10px
                                                                                     10px
@@ -185,12 +183,11 @@ $shipping   = $order->get_formatted_shipping_address();
                                                                                     50px;
                                                                             ">
 										<strong class="title" style="
-                                                                                    text-transform: uppercase;
                                                                                     display: block;
                                                                                     margin-bottom: 5px;
                                                                                 ">
 											Payment
-											Method
+											Method <br>
 										</strong>
 										<span style="
                                                                                     color: #fff;

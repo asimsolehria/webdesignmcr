@@ -36,7 +36,7 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
 </tr>
 
 
-<tr>
+<!-- <tr>
 	<td style="padding: 10px;color:#fff">
 		<?php
 		/**
@@ -48,7 +48,7 @@ do_action('woocommerce_email_header', $email_heading, $email); ?>
 
 		?>
 	</td>
-</tr>
+</tr> -->
 
 <?php
 

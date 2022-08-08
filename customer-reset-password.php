@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {
 	</td>
 </tr>
 
-<tr>
+<!-- <tr>
 	<td style="padding: 10px;color:#fff">
 		<?php
 		/**
@@ -56,7 +56,7 @@ if (!defined('ABSPATH')) {
 
 		?>
 	</td>
-</tr>
+</tr> -->
 
 <?php
 

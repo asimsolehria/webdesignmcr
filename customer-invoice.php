@@ -84,7 +84,7 @@ do_action('woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $
 do_action('woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email);
 
 ?>
-<tr>
+<!-- <tr>
 	<td style="color: #fff;padding: 10px;">
 		<?php
 
@@ -97,7 +97,7 @@ do_action('woocommerce_email_customer_details', $order, $sent_to_admin, $plain_t
 
 		?>
 	</td>
-</tr>
+</tr> -->
 
 
 <?php

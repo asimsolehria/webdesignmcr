@@ -47,9 +47,10 @@ foreach ($items as $item_id => $item) :
                                                                 padding-left: 30px;
                                                                 text-align: center;
                                                             ">
-			<img alt="Queen" class="product-thumb" height="150" width="150" src="<?php echo $image_url; ?>" style="
-                                                                    width: 150px;
-                                                                    height: 150px;
+			<img alt="Queen" class="product-thumb" height="80" width="80" src="<?php echo $image_url; ?>" style="
+                                                                    width: 80px;
+                                                                    height: 80px;
+																	border-radius: 10px;
                                                                 " />
 			<div class="row-spacer" style="
                                                                     height: 8px;
