@@ -95,6 +95,7 @@ $email_subheadings = array(
 						<?php echo $email_subheadings[$email->id]; ?>
 					</td>
 				</tr>
+
 				<tr class="line-item">
 					<td colspan="3" class="line-item product-thumb-column" style="
                                                                 width: 80px;
@@ -104,84 +105,25 @@ $email_subheadings = array(
                                                                 font-size: 14px;
                                                                 padding-bottom: 10px;
                                                             ">
-						<!-- <a href="<?php echo $order_url; ?>" style="
+						<a  href="<?php echo $order_url; ?>" style="
                                                                     text-decoration: none;
                                                                     background: #dabb4c;
                                                                     color: #fff;
                                                                     padding: 12px;
                                                                     border-radius: 5px;
                                                                 ">View your
-							order</a> -->
-						<div>
-							<!--[if mso]>
+							order</a>
 
-    <v:roundrect 
-      xmlns:v="urn:schemas-microsoft-com:vml" 
-      xmlns:w="urn:schemas-microsoft-com:office:word" 
-      href="<?php echo $order_url; ?>" 
-      style="height:52px;v-text-anchor:middle;width:250px; " 
-      arcsize="10%" 
-      stroke="f" 
-      fillcolor="#dabb4c">
-    <w:anchorlock/>
-    <center>
-  <![endif]-->
-							<a href="<?php echo $order_url; ?>" style="background-color:#dabb4c;
-                border-radius:5px;
-                color:#ffffff;
-                display:inline-block;
-                font-family:sans-serif;
-                font-size:13px;
-                font-weight:bold;
-                /* line-height:40px; */
-				padding: 20px;
-				padding-top: 10px;
-				padding-bottom: 10px;
-                text-align:center;
-                text-decoration:none;
-                width:150px;
-                -webkit-text-size-adjust:none;">
-								View your order
-							</a>
-							<!--[if mso]>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<a href="<?php echo site_url(); ?>" style="
+                                                                    
+                                                                    color: #dabb4c;
+                                                                    padding: 12px;
+                                                                ">Visit our site</a>
 
-    </center>
-  </v:roundrect>
-<![endif]-->
-							<!--[if mso]>
 
-    <v:roundrect 
-      xmlns:v="urn:schemas-microsoft-com:vml" 
-      xmlns:w="urn:schemas-microsoft-com:office:word" 
-      href="<?php echo site_url(); ?>" 
-      style="height:52px;v-text-anchor:middle;width:250px; display:block" 
-      arcsize="10%" 
-      stroke="f" 
-      fillcolor="#000000">
-    <w:anchorlock/>
-    <center>
-  <![endif]-->
-							<a href="<?php echo site_url(); ?>" style="
-                border-radius:5px;
-                color:#dabb4c;
-                display:inline-block;
-                font-family:sans-serif;
-				padding-top: 10px;
-				padding-bottom: 10px;
-                font-weight:bold;
-                /* line-height:40px; */
-				padding:20px;
-                text-align:center;
-                
-                width:150px;
-                -webkit-text-size-adjust:none;">
-								Visit our store
-							</a>
-							<!--[if mso]>
-
-    </center>
-  </v:roundrect>
-<![endif]-->
 					</td>
 
 				</tr>
